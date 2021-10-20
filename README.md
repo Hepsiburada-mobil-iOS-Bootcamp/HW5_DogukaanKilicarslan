@@ -1,2 +1,2 @@
-# CodeCase-MobiRoller
+# E-store App
 E-store app with realtime database 
