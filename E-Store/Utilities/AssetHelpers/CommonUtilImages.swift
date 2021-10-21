@@ -1,8 +1,8 @@
 //
 //  CommonUtilImages.swift
-//  WeatherApplication
+//  E-Store
 //
-//  Created by Erkut Bas on 17.10.2021.
+//  Created by DarkBringer on 21.10.2021.
 //
 
 import UIKit

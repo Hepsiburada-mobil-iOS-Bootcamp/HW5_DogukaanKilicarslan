@@ -1,13 +1,12 @@
 //
 //  UIView+Extensions.swift
-//  PermissionProject
+//  E-Store
 //
-//  Created by Erkut Bas on 25.09.2021.
+//  Created by DarkBringer on 21.10.2021.
 //
 
 import UIKit
 
-typealias BooleanBlock = (Bool) -> Void
 
 extension UIView {
     

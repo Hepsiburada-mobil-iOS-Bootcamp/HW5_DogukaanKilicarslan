@@ -1,21 +1,19 @@
 //
 //  AccountViewModel.swift
-//  Week_3
+//  E-Store
 //
-//  Created by Erkut Bas on 2.10.2021.
+//  Created by DarkBringer on 21.10.2021.
 //
 
 import Foundation
 import BaseComponents
-typealias VoidBlock = () -> Void
-typealias AccountViewState = (ViewState) -> Void
 
 class AccountViewModel {
     
     private let formatter: AccountViewDataProtocol
     
     private var state: AccountViewState?
-    private var loginActionBlock: VoidBlock?
+    private var loginActionBlock: VoidCompletionBlock?
     private var data = [GenericDataProtocol]()
     
     init(formatter: AccountViewDataProtocol) {
@@ -36,7 +34,7 @@ class AccountViewModel {
         state = completion
     }
     
-    func subscribeLoginAction(with completion: @escaping VoidBlock) {
+    func subscribeLoginAction(with completion: @escaping VoidCompletionBlock) {
         loginActionBlock = completion
     }
     
@@ -44,7 +42,7 @@ class AccountViewModel {
         return ItemListViewData(headerViewData: formatter.getHeaderViewData(with: loginActionButtonListener))
     }
     
-    private lazy var loginActionButtonListener: VoidBlock = { [weak self] in
+    private lazy var loginActionButtonListener: VoidCompletionBlock = { [weak self] in
         print("button tapped")
         self?.loginActionBlock?()
     }

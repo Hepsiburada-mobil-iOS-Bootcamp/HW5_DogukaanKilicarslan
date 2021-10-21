@@ -5,63 +5,46 @@
 //  Created by DarkBringer on 20.10.2021.
 //
 
-import Foundation
+import Firebase
 
 // MARK: - Categories
-struct Categories: Codable {
-    let products: [Product]?
-    let shoppingCategories: [ShoppingCategory]?
+struct ProductsAndCategories {
     
-    enum CodingKeys: String, CodingKey {
-        case products
-        case shoppingCategories = "shopping_categories"
-    }
-}
-
-//
-// To read values from URLs:
-//
-//   let task = URLSession.shared.productTask(with: url) { product, response, error in
-//     if let product = product {
-//       ...
-//     }
-//   }
-//   task.resume()
-
-// MARK: - Product
-struct Product: Codable {
-    let productDescription, id: String?
-    let imageURL: String?
-    let images: [String]?
-    let name: String?
-    let price: Int?
-    let categoryImageURL: String?
-    let categoryName: CategoryName?
+    let ref: DatabaseReference?
+    let key: String
+    let product: String?
+    let shoppingCategories: [String]?
     
-    enum CodingKeys: String, CodingKey {
-        case productDescription = "description"
-        case id
-        case imageURL = "image_url"
-        case images, name, price
-        case categoryImageURL = "category_image_url"
-        case categoryName = "category_name"
+    internal init(ref: DatabaseReference?,
+                  key: String,
+                  product: String?,
+                  shoppingCategories: [String]?) {
+        
+        self.ref = ref
+        self.key = key
+        self.product = product
+        self.shoppingCategories = shoppingCategories
+        
     }
-}
-
-enum CategoryName: String, Codable {
-    case suits = "Suits"
-}
-
-// MARK: - ShoppingCategory
-struct ShoppingCategory: Codable {
-    let color, id: String?
-    let imageURL: String?
-    let name: String?
-    let products: [Product]?
     
-    enum CodingKeys: String, CodingKey {
-        case color, id
-        case imageURL = "image_url"
-        case name, products
+    init?(snapshot: DataSnapshot) {
+        guard
+            let value = snapshot.value as? [String: AnyObject],
+            let categories = value["categories"] as? [String],
+            let product = value["product"] as? String else { return nil }
+    
+        self.ref = snapshot.ref
+        self.key = snapshot.key
+        self.product = product
+        self.shoppingCategories = categories
     }
+    
+    func toAnyObject() -> Any {
+        return [
+            "product" : product,
+            "categories" : shoppingCategories
+        ]
+    }
+    
 }
+

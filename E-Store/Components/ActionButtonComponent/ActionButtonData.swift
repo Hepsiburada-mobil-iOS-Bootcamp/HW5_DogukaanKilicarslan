@@ -7,8 +7,6 @@
 
 import UIKit
 
-typealias VoidCompletionBlock = () -> Void
-
 class ActionButtonData {
     
     private(set) var text: String
