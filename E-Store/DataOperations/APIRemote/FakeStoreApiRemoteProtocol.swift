@@ -9,6 +9,6 @@ import Foundation
 
 protocol FakeStoreApiRemoteProtocol {
     func getProductById(id: Int, with completion: @escaping ProductListResultBlock)
-    func getProductList(with completion: @escaping ProductListResultBlock)
+    func getProductList(itemCount: Int, with completion: @escaping ProductListResultBlock)
 
 }

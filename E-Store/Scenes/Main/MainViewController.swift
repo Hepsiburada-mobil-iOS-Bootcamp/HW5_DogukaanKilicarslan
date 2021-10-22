@@ -15,7 +15,6 @@ extension Selector {
 
 class MainViewController: BaseViewController<MainViewModel> {
     
-    private let database = Database.database().reference()
     
     private lazy var test: UIButton = {
         let temp = UIButton(type: .system)
@@ -59,15 +58,9 @@ class MainViewController: BaseViewController<MainViewModel> {
     }
     
     @objc func testButtonAction(_ sender: UIButton) {
-        
-        print("bidibidi")
-        
-        let x = database.observeSingleEvent(of: .value) { snapshot in
-            print(snapshot.description)
-        }
-        
-        print(x)
     
+        present(ProductsViewBuilder.build(), animated: true, completion: nil)
+        
     }
     
 }

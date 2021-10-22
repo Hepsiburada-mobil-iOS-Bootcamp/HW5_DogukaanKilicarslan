@@ -9,6 +9,9 @@ import Foundation
 
 struct ProductResponseModel: Codable {
     
-    let result: Product
+    let status: String
+    let code: Int
+    let count: Int
+    let data: Products
     
 }

@@ -13,7 +13,7 @@ class ProductListRequestServiceProvider: ApiServiceProvider<ProductListRequestMo
     init(request: ProductListRequestModel) {
         super.init(method: .get,
                    baseUrl: BaseURL.main.description,
-                   path: Paths.allProducts.description,
+                   path: Paths.allProductsWithItemCount(request.itemCount).description,
                    data: nil)
     }
     

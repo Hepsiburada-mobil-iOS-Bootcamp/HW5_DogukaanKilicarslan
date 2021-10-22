@@ -1,18 +1,18 @@
 //
-//  CategoryCollectionView.swift
+//  ProductCollectionView.swift
 //  E-Store
 //
-//  Created by DarkBringer on 20.10.2021.
+//  Created by DarkBringer on 22.10.2021.
 //
 
 import UIKit
 import BaseComponents
 
-class CategoryCollectionView: GenericBaseView<CategoryCollectionViewData> {
+class ProductCollectionView: GenericBaseView<ProductCollectionViewData> {
     
-    private var delegateProtocol: CategoryCollectionViewDelegateProtocol?
+    private var delegateProtocol: ProductCollectionViewProtocol?
     
-    lazy var collectionView: UICollectionView = {
+    private lazy var collectionView: UICollectionView = {
         let layout = UICollectionViewFlowLayout()
         layout.scrollDirection = .vertical
         layout.minimumLineSpacing = 10
@@ -26,11 +26,10 @@ class CategoryCollectionView: GenericBaseView<CategoryCollectionViewData> {
         collection.keyboardDismissMode = .onDrag
         collection.showsVerticalScrollIndicator = false
         collection.showsHorizontalScrollIndicator = false
-        collection.genericRegisterCell(CategoryCollectionViewCell.self)
+        collection.genericRegisterCell(ProductCollectionViewCell.self)
         return collection
     }()
-    
-    override init(frame: CGRect = .zero, data: CategoryCollectionViewData? = nil) {
+    override init(frame: CGRect = .zero, data: ProductCollectionViewData? = nil) {
         super.init(frame: frame, data: data)
     }
     
@@ -43,26 +42,22 @@ class CategoryCollectionView: GenericBaseView<CategoryCollectionViewData> {
         addCollectionView()
     }
     
-    func addCollectionView() {
+    private func addCollectionView() {
         addSubview(collectionView)
-        
-        collectionView.backgroundColor = #colorLiteral(red: 0.6000000238, green: 0.6000000238, blue: 0.6000000238, alpha: 1)
+        collectionView.backgroundColor = #colorLiteral(red: 0.09019608051, green: 0, blue: 0.3019607961, alpha: 1)
         
         NSLayoutConstraint.activate([
-            
             collectionView.leadingAnchor.constraint(equalTo: leadingAnchor),
             collectionView.trailingAnchor.constraint(equalTo: trailingAnchor),
             collectionView.bottomAnchor.constraint(equalTo: bottomAnchor),
             collectionView.topAnchor.constraint(equalTo: topAnchor)
-            
         ])
         
     }
     
-    func setupDelegation(with delegate: CategoryCollectionViewDelegateProtocol) {
+    func setupDelegation(with delegate: ProductCollectionViewProtocol) {
         self.delegateProtocol = delegate
     }
-    
     func reloadCollectionView() {
         DispatchQueue.main.async {
             self.collectionView.reloadData()
@@ -72,12 +67,18 @@ class CategoryCollectionView: GenericBaseView<CategoryCollectionViewData> {
 }
 
 
-//MARK: - CollectionView extensions
 
-extension CategoryCollectionView: UICollectionViewDelegate, UICollectionViewDataSource {
+
+
+
+
+//MARK: - delegate methods
+
+
+extension ProductCollectionView: UICollectionViewDelegate, UICollectionViewDataSource {
     
     func numberOfSections(in collectionView: UICollectionView) -> Int {
-        return delegateProtocol?.getNumberOfSection() ?? 0
+        delegateProtocol?.getNumberOfSection() ?? 0
     }
     
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
@@ -86,23 +87,20 @@ extension CategoryCollectionView: UICollectionViewDelegate, UICollectionViewData
     
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
-        
         guard let data = delegateProtocol?.getData(at: indexPath.row) else { fatalError() }
-        guard let cell = collectionView.dequeueReusableCell(withReuseIdentifier: CategoryCollectionViewCell.identifier, for: indexPath) as? CategoryCollectionViewCell else { fatalError() }
-        
+        guard let cell = collectionView.dequeueReusableCell(withReuseIdentifier: ProductCollectionViewCell.identifier, for: indexPath) as? ProductCollectionViewCell else { fatalError() }
         cell.setRowData(data: data)
-        
         return cell
     }
     
     
 }
-
-
-extension CategoryCollectionView: UICollectionViewDelegateFlowLayout {
+extension ProductCollectionView: UICollectionViewDelegateFlowLayout {
+    
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
-        let height = (UIScreen.main.bounds.height - 50) / 3
-        let width = (UIScreen.main.bounds.width - 40) / 5
+        let height = (UIScreen.main.bounds.height - 50) / 2
+        let width = (UIScreen.main.bounds.width - 20) / 2
         return CGSize(width: width, height: height)
     }
+    
 }

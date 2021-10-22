@@ -19,6 +19,7 @@ class ProductListOperationsManager: ProductListOperationsManagerProtocol {
     
     func getProductListData() {
         let productListRequest = ProductListRequestModel()
+        fireApiCall(request: productListRequest, with: apiCallHandler)
         
     }
     

@@ -10,9 +10,9 @@ import DefaultNetworkOperationPackage
 
 class FakeStoreApiRemote: FakeStoreApiRemoteProtocol {
     
-    func getProductList(with completion: @escaping ProductListResultBlock) {
+    func getProductList(itemCount: Int, with completion: @escaping ProductListResultBlock) {
         do {
-            let productListRequest = ProductListRequestModel()
+            let productListRequest = ProductListRequestModel(itemCount: itemCount)
             let urlRequest = try ProductListRequestServiceProvider(request: productListRequest).returnUrlRequest()
             APIManager.shared.executeRequest(urlRequest: urlRequest, completion: completion)
         } catch let error {

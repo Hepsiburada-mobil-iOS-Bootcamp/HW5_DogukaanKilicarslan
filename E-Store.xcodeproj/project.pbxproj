@@ -9,12 +9,6 @@
 /* Begin PBXBuildFile section */
 		D80B3B4827205F5100098931 /* CategoryModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = D80B3B4727205F5100098931 /* CategoryModel.swift */; };
 		D80B3B4D27208AC600098931 /* Typealiases.swift in Sources */ = {isa = PBXBuildFile; fileRef = D80B3B4C27208AC600098931 /* Typealiases.swift */; };
-		D80B3B5227208D3E00098931 /* CategoryCollectionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D80B3B5127208D3E00098931 /* CategoryCollectionView.swift */; };
-		D80B3B5427208D6400098931 /* CategoryCollectionViewData.swift in Sources */ = {isa = PBXBuildFile; fileRef = D80B3B5327208D6400098931 /* CategoryCollectionViewData.swift */; };
-		D80B3B5627208DD000098931 /* CategoryCollectionViewDelegateProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = D80B3B5527208DD000098931 /* CategoryCollectionViewDelegateProtocol.swift */; };
-		D80B3B5827208E2300098931 /* CategoryCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = D80B3B5727208E2300098931 /* CategoryCollectionViewCell.swift */; };
-		D80B3B5B272120DF00098931 /* CategoryCardComponent.swift in Sources */ = {isa = PBXBuildFile; fileRef = D80B3B5A272120DF00098931 /* CategoryCardComponent.swift */; };
-		D80B3B5D272120E500098931 /* CategoryCardData.swift in Sources */ = {isa = PBXBuildFile; fileRef = D80B3B5C272120E500098931 /* CategoryCardData.swift */; };
 		D80B3B5F272123BC00098931 /* UICollectionView+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = D80B3B5E272123BC00098931 /* UICollectionView+Extensions.swift */; };
 		D80B3B652721274500098931 /* CustomImageViewComponentContainer.swift in Sources */ = {isa = PBXBuildFile; fileRef = D80B3B612721274500098931 /* CustomImageViewComponentContainer.swift */; };
 		D80B3B662721274500098931 /* CustomImageViewComponentData.swift in Sources */ = {isa = PBXBuildFile; fileRef = D80B3B622721274500098931 /* CustomImageViewComponentData.swift */; };
@@ -27,10 +21,6 @@
 		D80B3BB82721AC1B00098931 /* AuthenticationManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = D80B3BB72721AC1B00098931 /* AuthenticationManager.swift */; };
 		D80B3BBA2721ACBE00098931 /* AuthenticationManagerProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = D80B3BB92721ACBE00098931 /* AuthenticationManagerProtocol.swift */; };
 		D80B3BBC2721AF7900098931 /* SimpleAuthenticationRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = D80B3BBB2721AF7900098931 /* SimpleAuthenticationRequest.swift */; };
-		D80B3BCC2721B37700098931 /* CategoryViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D80B3BCB2721B37700098931 /* CategoryViewController.swift */; };
-		D80B3BCE2721B3BB00098931 /* CategoryViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = D80B3BCD2721B3BB00098931 /* CategoryViewModel.swift */; };
-		D80B3BDD2721BC6E00098931 /* CategoryViewDataGetter.swift in Sources */ = {isa = PBXBuildFile; fileRef = D80B3BDC2721BC6E00098931 /* CategoryViewDataGetter.swift */; };
-		D80B3BDF2721BC9700098931 /* CategoryViewDataGetterProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = D80B3BDE2721BC9700098931 /* CategoryViewDataGetterProtocol.swift */; };
 		D80B3BE22722CA5000098931 /* DefaultNetworkOperationPackage in Frameworks */ = {isa = PBXBuildFile; productRef = D80B3BE12722CA5000098931 /* DefaultNetworkOperationPackage */; };
 		D80B3BE52722CF9200098931 /* EndpointManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = D80B3BE42722CF9200098931 /* EndpointManager.swift */; };
 		D80B3BE82722D34C00098931 /* ProductListRequestModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = D80B3BE72722D34C00098931 /* ProductListRequestModel.swift */; };
@@ -43,6 +33,20 @@
 		D80B3BFD2722D9C000098931 /* ProductRequestServiceProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = D80B3BFC2722D9C000098931 /* ProductRequestServiceProvider.swift */; };
 		D80B3C002722DCA200098931 /* FakeStoreApiRemote.swift in Sources */ = {isa = PBXBuildFile; fileRef = D80B3BFF2722DCA200098931 /* FakeStoreApiRemote.swift */; };
 		D80B3C022722DF3000098931 /* FakeStoreApiRemoteProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = D80B3C012722DF3000098931 /* FakeStoreApiRemoteProtocol.swift */; };
+		D80B3C072722E5D600098931 /* ProductCardLabelPackComponent.swift in Sources */ = {isa = PBXBuildFile; fileRef = D80B3C062722E5D600098931 /* ProductCardLabelPackComponent.swift */; };
+		D80B3C092722E5E000098931 /* ProductCardLabelPackComponentData.swift in Sources */ = {isa = PBXBuildFile; fileRef = D80B3C082722E5E000098931 /* ProductCardLabelPackComponentData.swift */; };
+		D80B3C0C2722E8C300098931 /* ProductCardComponent.swift in Sources */ = {isa = PBXBuildFile; fileRef = D80B3C0B2722E8C300098931 /* ProductCardComponent.swift */; };
+		D80B3C0E2722E8CE00098931 /* ProductCardComponentData.swift in Sources */ = {isa = PBXBuildFile; fileRef = D80B3C0D2722E8CE00098931 /* ProductCardComponentData.swift */; };
+		D80B3C112722EDAB00098931 /* ProductCollectionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D80B3C102722EDAB00098931 /* ProductCollectionView.swift */; };
+		D80B3C132722EDD000098931 /* ProductCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = D80B3C122722EDD000098931 /* ProductCollectionViewCell.swift */; };
+		D80B3C152722F01100098931 /* ProductCollectionViewData.swift in Sources */ = {isa = PBXBuildFile; fileRef = D80B3C142722F01100098931 /* ProductCollectionViewData.swift */; };
+		D80B3C172722F02A00098931 /* ProductCollectionViewProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = D80B3C162722F02A00098931 /* ProductCollectionViewProtocol.swift */; };
+		D80B3C1A2722F23B00098931 /* ProductsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D80B3C192722F23B00098931 /* ProductsViewController.swift */; };
+		D80B3C1C2722F26100098931 /* ProductsViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = D80B3C1B2722F26100098931 /* ProductsViewModel.swift */; };
+		D80B3C1E2722F2A300098931 /* ProductViewDataGetter.swift in Sources */ = {isa = PBXBuildFile; fileRef = D80B3C1D2722F2A300098931 /* ProductViewDataGetter.swift */; };
+		D80B3C202722F5E700098931 /* ProductViewState.swift in Sources */ = {isa = PBXBuildFile; fileRef = D80B3C1F2722F5E700098931 /* ProductViewState.swift */; };
+		D80B3C222722F62200098931 /* ProductViewDataGetterProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = D80B3C212722F62200098931 /* ProductViewDataGetterProtocol.swift */; };
+		D80B3C242722F89600098931 /* ProductsViewBuilder.swift in Sources */ = {isa = PBXBuildFile; fileRef = D80B3C232722F89600098931 /* ProductsViewBuilder.swift */; };
 		D832C25F271EB7DC00DFBBFA /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = D832C25E271EB7DC00DFBBFA /* AppDelegate.swift */; };
 		D832C263271EB7DC00DFBBFA /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D832C262271EB7DC00DFBBFA /* ViewController.swift */; };
 		D832C268271EB7DE00DFBBFA /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = D832C267271EB7DE00DFBBFA /* Assets.xcassets */; };
@@ -110,12 +114,6 @@
 /* Begin PBXFileReference section */
 		D80B3B4727205F5100098931 /* CategoryModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CategoryModel.swift; sourceTree = "<group>"; };
 		D80B3B4C27208AC600098931 /* Typealiases.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Typealiases.swift; sourceTree = "<group>"; };
-		D80B3B5127208D3E00098931 /* CategoryCollectionView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CategoryCollectionView.swift; sourceTree = "<group>"; };
-		D80B3B5327208D6400098931 /* CategoryCollectionViewData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CategoryCollectionViewData.swift; sourceTree = "<group>"; };
-		D80B3B5527208DD000098931 /* CategoryCollectionViewDelegateProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CategoryCollectionViewDelegateProtocol.swift; sourceTree = "<group>"; };
-		D80B3B5727208E2300098931 /* CategoryCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CategoryCollectionViewCell.swift; sourceTree = "<group>"; };
-		D80B3B5A272120DF00098931 /* CategoryCardComponent.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CategoryCardComponent.swift; sourceTree = "<group>"; };
-		D80B3B5C272120E500098931 /* CategoryCardData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CategoryCardData.swift; sourceTree = "<group>"; };
 		D80B3B5E272123BC00098931 /* UICollectionView+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UICollectionView+Extensions.swift"; sourceTree = "<group>"; };
 		D80B3B612721274500098931 /* CustomImageViewComponentContainer.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CustomImageViewComponentContainer.swift; sourceTree = "<group>"; };
 		D80B3B622721274500098931 /* CustomImageViewComponentData.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CustomImageViewComponentData.swift; sourceTree = "<group>"; };
@@ -127,10 +125,6 @@
 		D80B3BB72721AC1B00098931 /* AuthenticationManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = AuthenticationManager.swift; path = "../../../../../E-Commerce-App/E-Commerce-App/Models/AuthenticationManager.swift"; sourceTree = "<group>"; };
 		D80B3BB92721ACBE00098931 /* AuthenticationManagerProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = AuthenticationManagerProtocol.swift; path = "../../../../../E-Commerce-App/E-Commerce-App/Models/AuthenticationManagerProtocol.swift"; sourceTree = "<group>"; };
 		D80B3BBB2721AF7900098931 /* SimpleAuthenticationRequest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = SimpleAuthenticationRequest.swift; path = "../../../../../E-Commerce-App/E-Commerce-App/Models/SimpleAuthenticationRequest.swift"; sourceTree = "<group>"; };
-		D80B3BCB2721B37700098931 /* CategoryViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CategoryViewController.swift; sourceTree = "<group>"; };
-		D80B3BCD2721B3BB00098931 /* CategoryViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CategoryViewModel.swift; sourceTree = "<group>"; };
-		D80B3BDC2721BC6E00098931 /* CategoryViewDataGetter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CategoryViewDataGetter.swift; sourceTree = "<group>"; };
-		D80B3BDE2721BC9700098931 /* CategoryViewDataGetterProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CategoryViewDataGetterProtocol.swift; sourceTree = "<group>"; };
 		D80B3BE42722CF9200098931 /* EndpointManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EndpointManager.swift; sourceTree = "<group>"; };
 		D80B3BE72722D34C00098931 /* ProductListRequestModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProductListRequestModel.swift; sourceTree = "<group>"; };
 		D80B3BEA2722D36200098931 /* ProductRequestModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProductRequestModel.swift; sourceTree = "<group>"; };
@@ -142,6 +136,20 @@
 		D80B3BFC2722D9C000098931 /* ProductRequestServiceProvider.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProductRequestServiceProvider.swift; sourceTree = "<group>"; };
 		D80B3BFF2722DCA200098931 /* FakeStoreApiRemote.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FakeStoreApiRemote.swift; sourceTree = "<group>"; };
 		D80B3C012722DF3000098931 /* FakeStoreApiRemoteProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FakeStoreApiRemoteProtocol.swift; sourceTree = "<group>"; };
+		D80B3C062722E5D600098931 /* ProductCardLabelPackComponent.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProductCardLabelPackComponent.swift; sourceTree = "<group>"; };
+		D80B3C082722E5E000098931 /* ProductCardLabelPackComponentData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProductCardLabelPackComponentData.swift; sourceTree = "<group>"; };
+		D80B3C0B2722E8C300098931 /* ProductCardComponent.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProductCardComponent.swift; sourceTree = "<group>"; };
+		D80B3C0D2722E8CE00098931 /* ProductCardComponentData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProductCardComponentData.swift; sourceTree = "<group>"; };
+		D80B3C102722EDAB00098931 /* ProductCollectionView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProductCollectionView.swift; sourceTree = "<group>"; };
+		D80B3C122722EDD000098931 /* ProductCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProductCollectionViewCell.swift; sourceTree = "<group>"; };
+		D80B3C142722F01100098931 /* ProductCollectionViewData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProductCollectionViewData.swift; sourceTree = "<group>"; };
+		D80B3C162722F02A00098931 /* ProductCollectionViewProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProductCollectionViewProtocol.swift; sourceTree = "<group>"; };
+		D80B3C192722F23B00098931 /* ProductsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProductsViewController.swift; sourceTree = "<group>"; };
+		D80B3C1B2722F26100098931 /* ProductsViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProductsViewModel.swift; sourceTree = "<group>"; };
+		D80B3C1D2722F2A300098931 /* ProductViewDataGetter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProductViewDataGetter.swift; sourceTree = "<group>"; };
+		D80B3C1F2722F5E700098931 /* ProductViewState.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProductViewState.swift; sourceTree = "<group>"; };
+		D80B3C212722F62200098931 /* ProductViewDataGetterProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProductViewDataGetterProtocol.swift; sourceTree = "<group>"; };
+		D80B3C232722F89600098931 /* ProductsViewBuilder.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProductsViewBuilder.swift; sourceTree = "<group>"; };
 		D832C25B271EB7DC00DFBBFA /* E-Store.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "E-Store.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		D832C25E271EB7DC00DFBBFA /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		D832C262271EB7DC00DFBBFA /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -221,14 +229,6 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
-		D80B3B412720577000098931 /* CategoryCollectionViewComponents */ = {
-			isa = PBXGroup;
-			children = (
-				D80B3B5027208D2600098931 /* CategoryCollectionView */,
-			);
-			path = CategoryCollectionViewComponents;
-			sourceTree = "<group>";
-		};
 		D80B3B4627205F2B00098931 /* Models */ = {
 			isa = PBXGroup;
 			children = (
@@ -245,26 +245,6 @@
 				D80B3B4C27208AC600098931 /* Typealiases.swift */,
 			);
 			path = Typealiases;
-			sourceTree = "<group>";
-		};
-		D80B3B5027208D2600098931 /* CategoryCollectionView */ = {
-			isa = PBXGroup;
-			children = (
-				D80B3B5127208D3E00098931 /* CategoryCollectionView.swift */,
-				D80B3B5727208E2300098931 /* CategoryCollectionViewCell.swift */,
-				D80B3B5527208DD000098931 /* CategoryCollectionViewDelegateProtocol.swift */,
-				D80B3B5327208D6400098931 /* CategoryCollectionViewData.swift */,
-			);
-			path = CategoryCollectionView;
-			sourceTree = "<group>";
-		};
-		D80B3B59272120C500098931 /* CategoryCardComponent */ = {
-			isa = PBXGroup;
-			children = (
-				D80B3B5A272120DF00098931 /* CategoryCardComponent.swift */,
-				D80B3B5C272120E500098931 /* CategoryCardData.swift */,
-			);
-			path = CategoryCardComponent;
 			sourceTree = "<group>";
 		};
 		D80B3B602721274500098931 /* CustomImageViewComponent */ = {
@@ -303,17 +283,6 @@
 				D80B3BBB2721AF7900098931 /* SimpleAuthenticationRequest.swift */,
 			);
 			path = AuthManager;
-			sourceTree = "<group>";
-		};
-		D80B3BBD2721B2FA00098931 /* Categories */ = {
-			isa = PBXGroup;
-			children = (
-				D80B3BCB2721B37700098931 /* CategoryViewController.swift */,
-				D80B3BDC2721BC6E00098931 /* CategoryViewDataGetter.swift */,
-				D80B3BDE2721BC9700098931 /* CategoryViewDataGetterProtocol.swift */,
-				D80B3BCD2721B3BB00098931 /* CategoryViewModel.swift */,
-			);
-			path = Categories;
 			sourceTree = "<group>";
 		};
 		D80B3BE32722CF7C00098931 /* EndpointManager */ = {
@@ -377,6 +346,58 @@
 				D80B3C012722DF3000098931 /* FakeStoreApiRemoteProtocol.swift */,
 			);
 			path = APIRemote;
+			sourceTree = "<group>";
+		};
+		D80B3C032722E2C600098931 /* ProductListComponents */ = {
+			isa = PBXGroup;
+			children = (
+				D80B3C0F2722ED9400098931 /* ProductCollectionViewComponent */,
+				D80B3C042722E56E00098931 /* ProductCardLabelPackComponent */,
+				D80B3C0A2722E81400098931 /* ProductCardComponent */,
+			);
+			path = ProductListComponents;
+			sourceTree = "<group>";
+		};
+		D80B3C042722E56E00098931 /* ProductCardLabelPackComponent */ = {
+			isa = PBXGroup;
+			children = (
+				D80B3C062722E5D600098931 /* ProductCardLabelPackComponent.swift */,
+				D80B3C082722E5E000098931 /* ProductCardLabelPackComponentData.swift */,
+			);
+			path = ProductCardLabelPackComponent;
+			sourceTree = "<group>";
+		};
+		D80B3C0A2722E81400098931 /* ProductCardComponent */ = {
+			isa = PBXGroup;
+			children = (
+				D80B3C0B2722E8C300098931 /* ProductCardComponent.swift */,
+				D80B3C0D2722E8CE00098931 /* ProductCardComponentData.swift */,
+			);
+			path = ProductCardComponent;
+			sourceTree = "<group>";
+		};
+		D80B3C0F2722ED9400098931 /* ProductCollectionViewComponent */ = {
+			isa = PBXGroup;
+			children = (
+				D80B3C102722EDAB00098931 /* ProductCollectionView.swift */,
+				D80B3C122722EDD000098931 /* ProductCollectionViewCell.swift */,
+				D80B3C142722F01100098931 /* ProductCollectionViewData.swift */,
+				D80B3C162722F02A00098931 /* ProductCollectionViewProtocol.swift */,
+			);
+			path = ProductCollectionViewComponent;
+			sourceTree = "<group>";
+		};
+		D80B3C182722F22B00098931 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				D80B3C192722F23B00098931 /* ProductsViewController.swift */,
+				D80B3C1B2722F26100098931 /* ProductsViewModel.swift */,
+				D80B3C212722F62200098931 /* ProductViewDataGetterProtocol.swift */,
+				D80B3C1D2722F2A300098931 /* ProductViewDataGetter.swift */,
+				D80B3C1F2722F5E700098931 /* ProductViewState.swift */,
+				D80B3C232722F89600098931 /* ProductsViewBuilder.swift */,
+			);
+			path = Products;
 			sourceTree = "<group>";
 		};
 		D832C252271EB7DC00DFBBFA = {
@@ -499,7 +520,7 @@
 		D832C2C9271F017C00DFBBFA /* Scenes */ = {
 			isa = PBXGroup;
 			children = (
-				D80B3BBD2721B2FA00098931 /* Categories */,
+				D80B3C182722F22B00098931 /* Products */,
 				D832C2E7271F053800DFBBFA /* Account */,
 				D832C2E0271F053300DFBBFA /* Login */,
 				D832C2D9271F052B00DFBBFA /* Main */,
@@ -552,8 +573,7 @@
 		D832C2F2271F057600DFBBFA /* Components */ = {
 			isa = PBXGroup;
 			children = (
-				D80B3B412720577000098931 /* CategoryCollectionViewComponents */,
-				D80B3B59272120C500098931 /* CategoryCardComponent */,
+				D80B3C032722E2C600098931 /* ProductListComponents */,
 				D832C2F3271F057600DFBBFA /* ActionButtonComponent */,
 				D80B3B692721279D00098931 /* CategoryLabelComponent */,
 				D832C2F8271F057600DFBBFA /* LabelPackComponent */,
@@ -725,31 +745,35 @@
 				D80B3C022722DF3000098931 /* FakeStoreApiRemoteProtocol.swift in Sources */,
 				D832C2E4271F053300DFBBFA /* LoginViewModel.swift in Sources */,
 				D832C31D271F057600DFBBFA /* PageViewComponent.swift in Sources */,
-				D80B3B5427208D6400098931 /* CategoryCollectionViewData.swift in Sources */,
+				D80B3C222722F62200098931 /* ProductViewDataGetterProtocol.swift in Sources */,
 				D80B3B6B2721283A00098931 /* CategoryLabelComponent.swift in Sources */,
 				D832C319271F057600DFBBFA /* ItemListView.swift in Sources */,
+				D80B3C152722F01100098931 /* ProductCollectionViewData.swift in Sources */,
 				D80B3BBC2721AF7900098931 /* SimpleAuthenticationRequest.swift in Sources */,
 				D832C2D5271F048200DFBBFA /* MainTabBarController.swift in Sources */,
+				D80B3C172722F02A00098931 /* ProductCollectionViewProtocol.swift in Sources */,
 				D832C2D4271F048200DFBBFA /* MainTabBarBuilder.swift in Sources */,
 				D832C2C6271F012500DFBBFA /* MainFont.swift in Sources */,
 				D80B3BF62722D71100098931 /* ProductListOperationsManager.swift in Sources */,
 				D832C2E5271F053300DFBBFA /* LoginViewBuilder.swift in Sources */,
 				D832C31A271F057600DFBBFA /* HeaderView.swift in Sources */,
 				D80B3B662721274500098931 /* CustomImageViewComponentData.swift in Sources */,
-				D80B3B5227208D3E00098931 /* CategoryCollectionView.swift in Sources */,
 				D832C30E271F057600DFBBFA /* ActionButtonData.swift in Sources */,
-				D80B3B5627208DD000098931 /* CategoryCollectionViewDelegateProtocol.swift in Sources */,
+				D80B3C132722EDD000098931 /* ProductCollectionViewCell.swift in Sources */,
 				D832C2C8271F012500DFBBFA /* UserDefaultsWrapperHelper.swift in Sources */,
 				D80B3B8227216E0A00098931 /* ImageCacheManager.swift in Sources */,
 				D832C314271F057600DFBBFA /* ItemTableViewCellData.swift in Sources */,
+				D80B3C0E2722E8CE00098931 /* ProductCardComponentData.swift in Sources */,
 				D832C2EF271F053800DFBBFA /* AccountViewDataFormatter.swift in Sources */,
 				D832C2C7271F012500DFBBFA /* TutorialViewInfoStore.swift in Sources */,
-				D80B3BDF2721BC9700098931 /* CategoryViewDataGetterProtocol.swift in Sources */,
 				D80B3BB82721AC1B00098931 /* AuthenticationManager.swift in Sources */,
 				D832C2B3271F012500DFBBFA /* UIView+Extensions.swift in Sources */,
 				D80B3BE82722D34C00098931 /* ProductListRequestModel.swift in Sources */,
+				D80B3C1A2722F23B00098931 /* ProductsViewController.swift in Sources */,
 				D832C2B5271F012500DFBBFA /* SFSymbolsHelper.swift in Sources */,
+				D80B3C0C2722E8C300098931 /* ProductCardComponent.swift in Sources */,
 				D832C2F1271F053800DFBBFA /* AccountViewDataProtocol.swift in Sources */,
+				D80B3C112722EDAB00098931 /* ProductCollectionView.swift in Sources */,
 				D832C30F271F057600DFBBFA /* ActionButton.swift in Sources */,
 				D832C2B7271F012500DFBBFA /* CommonUtilImages.swift in Sources */,
 				D832C2ED271F053800DFBBFA /* AccountViewBuilder.swift in Sources */,
@@ -757,13 +781,12 @@
 				D80B3B652721274500098931 /* CustomImageViewComponentContainer.swift in Sources */,
 				D80B3BEB2722D36200098931 /* ProductRequestModel.swift in Sources */,
 				D80B3BEF2722D3E100098931 /* ProductListResponseModel.swift in Sources */,
+				D80B3C202722F5E700098931 /* ProductViewState.swift in Sources */,
 				D832C315271F057600DFBBFA /* ItemTableViewCell.swift in Sources */,
 				D832C2E6271F053300DFBBFA /* LoginViewController.swift in Sources */,
 				D832C2DF271F052B00DFBBFA /* MainViewBuilder.swift in Sources */,
 				D832C317271F057600DFBBFA /* ItemListViewData.swift in Sources */,
-				D80B3B5D272120E500098931 /* CategoryCardData.swift in Sources */,
 				D80B3C002722DCA200098931 /* FakeStoreApiRemote.swift in Sources */,
-				D80B3B5B272120DF00098931 /* CategoryCardComponent.swift in Sources */,
 				D80B3BFB2722D99D00098931 /* ProductListRequestServiceProvider.swift in Sources */,
 				D832C2B4271F012500DFBBFA /* String+Extension.swift in Sources */,
 				D832C30D271F057600DFBBFA /* ActionButtonType.swift in Sources */,
@@ -773,24 +796,25 @@
 				D80B3BF82722D73C00098931 /* ProductListOperationsManagerProtocol.swift in Sources */,
 				D80B3BFD2722D9C000098931 /* ProductRequestServiceProvider.swift in Sources */,
 				D832C2F0271F053800DFBBFA /* AccountViewController.swift in Sources */,
+				D80B3C1C2722F26100098931 /* ProductsViewModel.swift in Sources */,
 				D80B3B682721274500098931 /* CustomImageLoadingType.swift in Sources */,
-				D80B3B5827208E2300098931 /* CategoryCollectionViewCell.swift in Sources */,
 				D832C2DE271F052B00DFBBFA /* MainViewModel.swift in Sources */,
-				D80B3BCC2721B37700098931 /* CategoryViewController.swift in Sources */,
 				D832C25F271EB7DC00DFBBFA /* AppDelegate.swift in Sources */,
 				D80B3B4827205F5100098931 /* CategoryModel.swift in Sources */,
 				D832C31B271F057600DFBBFA /* HeaderViewData.swift in Sources */,
 				D832C2EE271F053800DFBBFA /* AccountViewModel.swift in Sources */,
+				D80B3C1E2722F2A300098931 /* ProductViewDataGetter.swift in Sources */,
 				D832C318271F057600DFBBFA /* ItemListProtocol.swift in Sources */,
 				D832C2B2271F012500DFBBFA /* UIApplication+Extension.swift in Sources */,
 				D832C312271F057600DFBBFA /* LabelPackComponentData.swift in Sources */,
+				D80B3C242722F89600098931 /* ProductsViewBuilder.swift in Sources */,
 				D832C313271F057600DFBBFA /* LabelPackComponent.swift in Sources */,
+				D80B3C072722E5D600098931 /* ProductCardLabelPackComponent.swift in Sources */,
 				D80B3B672721274500098931 /* CustomImageViewComponent.swift in Sources */,
-				D80B3BDD2721BC6E00098931 /* CategoryViewDataGetter.swift in Sources */,
-				D80B3BCE2721B3BB00098931 /* CategoryViewModel.swift in Sources */,
 				D832C31E271F057600DFBBFA /* PageViewComponentData.swift in Sources */,
 				D832C2B6271F012500DFBBFA /* TabBarImages.swift in Sources */,
 				D832C311271F057600DFBBFA /* LabelDistributionData.swift in Sources */,
+				D80B3C092722E5E000098931 /* ProductCardLabelPackComponentData.swift in Sources */,
 				D80B3BBA2721ACBE00098931 /* AuthenticationManagerProtocol.swift in Sources */,
 				D832C2B8271F012500DFBBFA /* PageViewImages.swift in Sources */,
 				D832C2DD271F052B00DFBBFA /* MainViewController.swift in Sources */,

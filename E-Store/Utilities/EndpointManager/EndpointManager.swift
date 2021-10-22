@@ -15,7 +15,7 @@ enum EndpointManager {
         var description: String {
             switch self {
                 case .main:
-                    return "https://fakestoreapi.com/products"
+                    return "https://fakerapi.it/api/v1/products/"
             }
         }
     }
@@ -23,17 +23,14 @@ enum EndpointManager {
     enum Paths: CustomStringConvertible {
         
         case productWithId(Int)
-        case allProducts
-        case limitedProductList(Int)
+        case allProductsWithItemCount(Int)
         
         var description: String {
             switch self {
                 case .productWithId(let id):
-                    return "/\(id)"
-                case .allProducts:
-                    return ""
-                case .limitedProductList(let limit):
-                    return "limit=\(limit)"
+                    return "getProduct/\(id)"
+                case .allProductsWithItemCount(let itemCount):
+                    return "_quantity=\(itemCount)"
             }
         }
         

@@ -5,80 +5,84 @@
 //  Created by DarkBringer on 20.10.2021.
 //
 
+// This file was generated from JSON Schema using quicktype, do not modify it directly.
+// To parse the JSON, add this file to your project and do:
+//
+//   let categories = try? newJSONDecoder().decode(Categories.self, from: jsonData)
+
 import Foundation
 
-// MARK: - Category
-struct Product: Codable {
-    let id: Int?
-    let title: String?
-    let price: Double?
-    let categoryDescription: String?
-    let category: CategoryEnum?
+// MARK: - Categories
+class Categories: Codable {
+    let status: String?
+    let code, total: Int?
+    let data: [Product]?
+    
+    init(status: String?, code: Int?, total: Int?, data: [Product]?) {
+        self.status = status
+        self.code = code
+        self.total = total
+        self.data = data
+    }
+
+}
+
+// MARK: - Datum
+class Product: Codable {
+    let name, description, ean, upc: String?
     let image: String?
-    let rating: Rating?
+    let images: [Image]?
+    let netPrice: Double?
+    let taxes, price: String?
+    let categories, tags: [String]?
     
     enum CodingKeys: String, CodingKey {
-        case id, title, price
-        case categoryDescription = "description"
-        case category, image, rating
+        case name
+        case description = "description"
+        case ean, upc, image, images
+        case netPrice = "net_price"
+        case taxes, price, categories, tags
+    }
+    
+    init(name: String?,
+         description: String?,
+         ean: String?,
+         upc: String?,
+         image: String?,
+         images: [Image]?,
+         netPrice: Double?,
+         taxes: String?,
+         price: String?,
+         categories: [String]?,
+         tags: [String]?) {
+        self.name = name
+        self.description = description
+        self.ean = ean
+        self.upc = upc
+        self.image = image
+        self.images = images
+        self.netPrice = netPrice
+        self.taxes = taxes
+        self.price = price
+        self.categories = categories
+        self.tags = tags
     }
 }
 
-enum CategoryEnum: String, Codable {
-    case electronics = "electronics"
-    case jewelery = "jewelery"
-    case menSClothing = "men's clothing"
-    case womenSClothing = "women's clothing"
+// MARK: - Image
+class Image: Codable {
+    let title, imageDescription: String?
+    let url: String?
+    
+    enum CodingKeys: String, CodingKey {
+        case title
+        case imageDescription = "description"
+        case url
+    }
+    
+    init(title: String?, imageDescription: String?, url: String?) {
+        self.title = title
+        self.imageDescription = imageDescription
+        self.url = url
+    }
 }
-
-//
-// To read values from URLs:
-//
-//   let task = URLSession.shared.ratingTask(with: url) { rating, response, error in
-//     if let rating = rating {
-//       ...
-//     }
-//   }
-//   task.resume()
-
-// MARK: - Rating
-struct Rating: Codable {
-    let rate: Double?
-    let count: Int?
-}
-
-// MARK: - Helper functions for creating encoders and decoders
-
-//func newJSONDecoder() -> JSONDecoder {
-//    let decoder = JSONDecoder()
-//    if #available(iOS 10.0, OSX 10.12, tvOS 10.0, watchOS 3.0, *) {
-//        decoder.dateDecodingStrategy = .iso8601
-//    }
-//    return decoder
-//}
-//
-//func newJSONEncoder() -> JSONEncoder {
-//    let encoder = JSONEncoder()
-//    if #available(iOS 10.0, OSX 10.12, tvOS 10.0, watchOS 3.0, *) {
-//        encoder.dateEncodingStrategy = .iso8601
-//    }
-//    return encoder
-//}
-
-// MARK: - URLSession response handlers
-
-//extension URLSession {
-//    fileprivate func codableTask<T: Codable>(with url: URL, completionHandler: @escaping (T?, URLResponse?, Error?) -> Void) -> URLSessionDataTask {
-//        return self.dataTask(with: url) { data, response, error in
-//            guard let data = data, error == nil else {
-//                completionHandler(nil, response, error)
-//                return
-//            }
-//            completionHandler(try? newJSONDecoder().decode(T.self, from: data), response, nil)
-//        }
-//    }
-//
-//    func categoriesTask(with url: URL, completionHandler: @escaping (Categories?, URLResponse?, Error?) -> Void) -> URLSessionDataTask {
-//        return self.codableTask(with: url, completionHandler: completionHandler)
-//    }
-//}
