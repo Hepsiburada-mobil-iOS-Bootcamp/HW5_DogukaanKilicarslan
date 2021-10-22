@@ -15,7 +15,7 @@ enum EndpointManager {
         var description: String {
             switch self {
                 case .main:
-                    return "https://fakerapi.it/api/v1/products/"
+                    return "https://fakerapi.it/api/v1/"
             }
         }
     }
@@ -24,13 +24,16 @@ enum EndpointManager {
         
         case productWithId(Int)
         case allProductsWithItemCount(Int)
+        case products
         
         var description: String {
             switch self {
                 case .productWithId(let id):
                     return "getProduct/\(id)"
                 case .allProductsWithItemCount(let itemCount):
-                    return "_quantity=\(itemCount)"
+                    return "_quantity=20"
+                case .products:
+                    return "products"
             }
         }
         

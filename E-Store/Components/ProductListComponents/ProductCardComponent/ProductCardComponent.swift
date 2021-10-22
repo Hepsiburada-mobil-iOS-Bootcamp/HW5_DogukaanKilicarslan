@@ -25,7 +25,7 @@ class ProductCardComponent: GenericBaseView<GenericDataProtocol> {
         let temp = UIView()
         temp.translatesAutoresizingMaskIntoConstraints = false
         temp.layer.cornerRadius = 6
-        temp.backgroundColor = #colorLiteral(red: 0.2196078449, green: 0.007843137719, blue: 0.8549019694, alpha: 1)
+        temp.backgroundColor = #colorLiteral(red: 0.5725490451, green: 0, blue: 0.2313725501, alpha: 1)
         temp.clipsToBounds = true
         return temp
     }()

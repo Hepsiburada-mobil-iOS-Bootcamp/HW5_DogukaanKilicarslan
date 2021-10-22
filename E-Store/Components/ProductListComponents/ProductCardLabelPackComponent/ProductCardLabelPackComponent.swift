@@ -32,6 +32,7 @@ class ProductCardLabelPackComponent: GenericBaseView<ProductCardLabelPackCompone
         temp.translatesAutoresizingMaskIntoConstraints = false
         return temp
     }()
+    
 //    private lazy var productCategory: LabelPackComponent = {
 //        let temp = LabelPackComponent()
 //        temp.translatesAutoresizingMaskIntoConstraints = false

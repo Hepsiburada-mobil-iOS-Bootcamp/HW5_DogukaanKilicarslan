@@ -14,7 +14,7 @@ class ProductsViewDataGetter: ProductViewDataGetterProtocol {
     private var list: Products = [Product]()
     
     func getItem(from data: Product) -> GenericDataProtocol {
-        return ProductCardComponentData(imageData: CustomImageViewComponentData(imageUrl: data.image ?? "").setContentMode(by: .scaleAspectFit),
+        return ProductCardComponentData(imageData: CustomImageViewComponentData(imageUrl: data.image!).setContentMode(by: .scaleAspectFit),
                                         productLabelPackData: ProductCardLabelPackComponentData(
                                             productName: LabelPackComponentData(
                                                 title: data.name ?? "noname",

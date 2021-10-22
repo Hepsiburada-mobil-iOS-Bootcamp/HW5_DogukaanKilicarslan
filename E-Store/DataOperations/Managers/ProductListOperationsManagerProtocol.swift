@@ -10,7 +10,7 @@ import RxSwift
 
 protocol ProductListOperationsManagerProtocol {
     
-    func getProductListData()
+    func getProductListData(with completion: @escaping ProductListResultBlock)
     
     func subscribeDataPublisher(with completion: @escaping ProductListResultBlock) -> Disposable
     

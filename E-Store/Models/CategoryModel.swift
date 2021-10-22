@@ -29,12 +29,17 @@ class Categories: Codable {
 
 // MARK: - Datum
 class Product: Codable {
-    let name, description, ean, upc: String?
+    let name: String?
+    let description: String?
+    let ean: String?
+    let upc: String?
     let image: String?
     let images: [Image]?
     let netPrice: Double?
-    let taxes, price: String?
-    let categories, tags: [String]?
+    let taxes: Int?
+    let price: String?
+    let categories: [Int]?
+    let tags: [String]?
     
     enum CodingKeys: String, CodingKey {
         case name
@@ -51,9 +56,9 @@ class Product: Codable {
          image: String?,
          images: [Image]?,
          netPrice: Double?,
-         taxes: String?,
+         taxes: Int?,
          price: String?,
-         categories: [String]?,
+         categories: [Int]?,
          tags: [String]?) {
         self.name = name
         self.description = description
@@ -80,7 +85,9 @@ class Image: Codable {
         case url
     }
     
-    init(title: String?, imageDescription: String?, url: String?) {
+    init(title: String?,
+         imageDescription: String?,
+         url: String?) {
         self.title = title
         self.imageDescription = imageDescription
         self.url = url

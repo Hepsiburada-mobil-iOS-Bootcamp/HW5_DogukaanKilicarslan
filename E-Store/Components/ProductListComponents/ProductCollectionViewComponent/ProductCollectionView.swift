@@ -29,6 +29,7 @@ class ProductCollectionView: GenericBaseView<ProductCollectionViewData> {
         collection.genericRegisterCell(ProductCollectionViewCell.self)
         return collection
     }()
+    
     override init(frame: CGRect = .zero, data: ProductCollectionViewData? = nil) {
         super.init(frame: frame, data: data)
     }
@@ -66,14 +67,7 @@ class ProductCollectionView: GenericBaseView<ProductCollectionViewData> {
     
 }
 
-
-
-
-
-
-
 //MARK: - delegate methods
-
 
 extension ProductCollectionView: UICollectionViewDelegate, UICollectionViewDataSource {
     
@@ -92,7 +86,6 @@ extension ProductCollectionView: UICollectionViewDelegate, UICollectionViewDataS
         cell.setRowData(data: data)
         return cell
     }
-    
     
 }
 extension ProductCollectionView: UICollectionViewDelegateFlowLayout {

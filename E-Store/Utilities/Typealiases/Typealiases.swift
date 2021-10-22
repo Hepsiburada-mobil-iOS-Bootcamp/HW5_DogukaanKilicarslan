@@ -17,7 +17,7 @@ typealias Paths = EndpointManager.Paths
 
 typealias Products = [Product]
 
-typealias ProductListResultBlock = (ProductListResult) -> Void
+typealias ProductListResultBlock = (Result<ProductListResponseModel, ErrorResponse>) -> Void
 typealias ProductResultBlock = (Result<ProductResponseModel, ErrorResponse>) -> Void
 typealias ProductListResult = Result<ProductListResponseModel, ErrorResponse>
 

@@ -12,7 +12,7 @@ class FakeStoreApiRemote: FakeStoreApiRemoteProtocol {
     
     func getProductList(itemCount: Int, with completion: @escaping ProductListResultBlock) {
         do {
-            let productListRequest = ProductListRequestModel(itemCount: itemCount)
+            let productListRequest = ProductListRequestModel()
             let urlRequest = try ProductListRequestServiceProvider(request: productListRequest).returnUrlRequest()
             APIManager.shared.executeRequest(urlRequest: urlRequest, completion: completion)
         } catch let error {

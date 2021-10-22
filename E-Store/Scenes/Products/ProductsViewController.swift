@@ -46,7 +46,7 @@ class ProductsViewController: BaseViewController<ProductsViewModel> {
     
     
     private func subscribeViewModelListeners() {
-        
+        viewModel.s
     }
     
     

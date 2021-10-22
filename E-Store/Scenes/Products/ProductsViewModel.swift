@@ -34,15 +34,7 @@ class ProductsViewModel {
     
     func getProductList() {
         state?(.loading)
-        opManager.getProductListData()
-    }
-    private func dataHandler(with response: ProductListResponseModel) {
-        data = response
-        state?(.done)
-        print(data)
-    }
-    private func subscribeOperationManagerPublisher() {
-        opManager.subscribeDataPublisher { [weak self] result in
+        opManager.getProductListData { [weak self] result in
             switch result {
                 case .failure(let error):
                     print("ERROR IN THE CHARACTERS VM 'subscribeOperationManagerPublisher' \(error)")
@@ -50,8 +42,26 @@ class ProductsViewModel {
                     self?.dataGetter.setData(with: response)
                     self?.dataHandler(with: response)
             }
-        }.disposed(by: disposeBag)
+        }
     }
+    
+    private func dataHandler(with response: ProductListResponseModel) {
+        data = response
+        state?(.done)
+        print("data == \(data)")
+    }
+    
+//    private func subscribeOperationManagerPublisher() {
+//        opManager.subscribeDataPublisher { [weak self] result in
+//            switch result {
+//                case .failure(let error):
+//                    print("ERROR IN THE CHARACTERS VM 'subscribeOperationManagerPublisher' \(error)")
+//                case .success(let response):
+//                    self?.dataGetter.setData(with: response)
+//                    self?.dataHandler(with: response)
+//            }
+//        }.disposed(by: disposeBag)
+//    }
 }
 
 extension ProductsViewModel: ProductCollectionViewProtocol {

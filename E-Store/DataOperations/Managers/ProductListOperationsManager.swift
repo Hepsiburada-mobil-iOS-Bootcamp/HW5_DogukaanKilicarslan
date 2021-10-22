@@ -11,16 +11,17 @@ import DefaultNetworkOperationPackage
 
 class ProductListOperationsManager: ProductListOperationsManagerProtocol {
     
+    
+    
     public static let shared = ProductListOperationsManager()
     
     private init() { }
     
     private let dataPublishSubject = PublishSubject<ProductListResult>()
     
-    func getProductListData() {
+    func getProductListData(with completion: @escaping ProductListResultBlock) {
         let productListRequest = ProductListRequestModel()
         fireApiCall(request: productListRequest, with: apiCallHandler)
-        
     }
     
     func subscribeDataPublisher(with completion: @escaping ProductListResultBlock) -> Disposable {

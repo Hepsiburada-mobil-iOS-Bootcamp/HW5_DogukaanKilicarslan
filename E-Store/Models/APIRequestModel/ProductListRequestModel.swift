@@ -9,10 +9,14 @@ import Foundation
 
 struct ProductListRequestModel: Codable {
     
-    private(set) var itemCount: Int = 20
+    private(set) var quantity: Int = 20
     
-    internal init(itemCount: Int = 20) {
-        self.itemCount = itemCount
+    internal init(quantity: Int = 20) {
+        self.quantity = quantity
     }
     
+    enum CodingKeys: String, CodingKey {
+        case quantity = "_quantity"
+        
+    }
 }
