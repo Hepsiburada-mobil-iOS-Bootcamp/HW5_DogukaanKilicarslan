@@ -77,7 +77,7 @@ class CategoryCollectionView: GenericBaseView<CategoryCollectionViewData> {
 extension CategoryCollectionView: UICollectionViewDelegate, UICollectionViewDataSource {
     
     func numberOfSections(in collectionView: UICollectionView) -> Int {
-        delegateProtocol?.getNumberOfSection() ?? 0
+        return delegateProtocol?.getNumberOfSection() ?? 0
     }
     
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
@@ -86,9 +86,12 @@ extension CategoryCollectionView: UICollectionViewDelegate, UICollectionViewData
     
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
+        
         guard let data = delegateProtocol?.getData(at: indexPath.row) else { fatalError() }
         guard let cell = collectionView.dequeueReusableCell(withReuseIdentifier: CategoryCollectionViewCell.identifier, for: indexPath) as? CategoryCollectionViewCell else { fatalError() }
+        
         cell.setRowData(data: data)
+        
         return cell
     }
     

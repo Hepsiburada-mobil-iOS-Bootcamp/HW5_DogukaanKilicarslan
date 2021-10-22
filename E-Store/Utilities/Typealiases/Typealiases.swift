@@ -6,10 +6,20 @@
 //
 
 import Foundation
+import DefaultNetworkOperationPackage
 
 typealias VoidCompletionBlock = () -> Void
 typealias BooleanBlock = (Bool) -> Void
 typealias AccountViewState = (ViewState) -> Void
+
+typealias BaseURL = EndpointManager.BaseURL
+typealias Paths = EndpointManager.Paths
+
+typealias Products = [Product]
+
+typealias ProductListResultBlock = (ProductListResult) -> Void
+typealias ProductResultBlock = (Result<ProductResponseModel, ErrorResponse>) -> Void
+typealias ProductListResult = Result<ProductListResponseModel, ErrorResponse>
 
 enum ViewState {
     

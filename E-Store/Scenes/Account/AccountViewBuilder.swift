@@ -12,12 +12,15 @@ import UIKit
 class AccountViewBuilder {
     
     class func build() -> UIViewController {
+        
         let formatter = AccountViewDataFormatter()
         let viewModel = AccountViewModel(formatter: formatter)
         let viewController = AccountViewController(viewModel: viewModel)
+        
         viewController.title = "Account"
         viewController.tabBarItem.image = SFSymbolsHelper.personOutlined.value
         viewController.tabBarItem.selectedImage = SFSymbolsHelper.personFilled.value
+        
         return viewController
         
     }

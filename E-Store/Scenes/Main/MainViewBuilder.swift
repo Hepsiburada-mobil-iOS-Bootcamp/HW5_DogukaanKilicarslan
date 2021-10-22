@@ -14,6 +14,7 @@ class MainViewBuilder {
         let viewModel = MainViewModel(authenticationManager: AuthenticationManager.shared)
         let viewController = MainViewController(viewModel: viewModel)
         let navigationViewController = UINavigationController(rootViewController: viewController)
+        
         viewController.title = "Categories"
         viewController.tabBarItem.image = TabBarImages.home.value
         viewController.tabBarItem.selectedImage = TabBarImages.homeSelected.value

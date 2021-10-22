@@ -7,12 +7,15 @@
 
 import Foundation
 
+
 class MainViewModel {
     
     private var loginStateListener: BooleanBlock?
     
+    private let authenticationManager: AuthenticationManagerProtocol
     
-    init() {
+    init(authenticationManager: AuthenticationManagerProtocol) {
+        self.authenticationManager = authenticationManager
         listenUserState()
     }
     

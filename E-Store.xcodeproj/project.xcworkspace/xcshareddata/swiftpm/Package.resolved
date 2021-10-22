@@ -29,6 +29,15 @@
         }
       },
       {
+        "package": "DefaultNetworkOperationPackage",
+        "repositoryURL": "https://github.com/emircanaydin/DefaultNetworkOperationPackage.git",
+        "state": {
+          "branch": null,
+          "revision": "5c9042ac07fcd6522e77ca6788ffbac96a7e6913",
+          "version": "1.3.1"
+        }
+      },
+      {
         "package": "Firebase",
         "repositoryURL": "https://github.com/firebase/firebase-ios-sdk.git",
         "state": {
