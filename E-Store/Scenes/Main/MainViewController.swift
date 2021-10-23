@@ -59,8 +59,6 @@ class MainViewController: BaseViewController<MainViewModel> {
     
     @objc func testButtonAction(_ sender: UIButton) {
     
-        present(ProductsViewBuilder.build(), animated: true, completion: nil)
-        
     }
     
 }

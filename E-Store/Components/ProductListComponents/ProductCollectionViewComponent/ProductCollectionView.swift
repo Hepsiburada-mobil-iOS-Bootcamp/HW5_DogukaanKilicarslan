@@ -59,6 +59,7 @@ class ProductCollectionView: GenericBaseView<ProductCollectionViewData> {
     func setupDelegation(with delegate: ProductCollectionViewProtocol) {
         self.delegateProtocol = delegate
     }
+    
     func reloadCollectionView() {
         DispatchQueue.main.async {
             self.collectionView.reloadData()
