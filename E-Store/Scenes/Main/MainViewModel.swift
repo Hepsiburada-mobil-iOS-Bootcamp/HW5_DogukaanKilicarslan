@@ -13,6 +13,7 @@ class MainViewModel {
     
     private var loginStateListener: BooleanBlock?
     private var mainViewState: ((ViewState) -> Void)?
+    private var detailViewState: ItemDetailRequestBlock?
     
     private let authenticationManager: AuthenticationManagerProtocol
     private let accessProviderManager: AccessProviderManagerProtocol
@@ -42,7 +43,12 @@ class MainViewModel {
     func subscribeViewState(with completion: @escaping (ViewState) -> Void) {
         mainViewState = completion
     }
+    func subscribeDetailViewState(with completion: @escaping ItemDetailRequestBlock) {
+        detailViewState = completion
+    }
     
+    //MARK: - private methods
+
     private func listenUserState() {
         authenticationManager.isLoggedIn(with: isLoggedInListener)
     }
@@ -59,24 +65,24 @@ class MainViewModel {
     }
     
     
-    private func fireApiCall(with request: URLRequest, with completion: @escaping (Result<CharacterListResponse, ErrorResponse>) -> Void) {
+    private func fireApiCall(with request: URLRequest, with completion: @escaping (Result<CharacterDataResponse, ErrorResponse>) -> Void) {
         APIManager.shared.executeRequest(urlRequest: request, completion: completion)
         
     }
-    private func getCharacterListRequest() -> CharacterListRequest {
-        return CharacterListRequest(offset: dataFormatter.paginationData.offset,
+    private func getCharacterListRequest() -> CharacterDataRequest {
+        return CharacterDataRequest(offset: dataFormatter.paginationData.offset,
                                     limit: dataFormatter.paginationData.limit,
                                     ts: accessProviderManager.returnUniqueData(),
                                     apikey: accessProviderManager.returnApiKey(),
                                     hash: accessProviderManager.returnHash())
     }
     
-    private func apiCallHandler(from response: CharacterListResponse) {
+    private func apiCallHandler(from response: CharacterDataResponse) {
         dataFormatter.setData(with: response)
         mainViewState?(.done)
     }
     
-    private lazy var dataListener: (Result<CharacterListResponse, ErrorResponse>) -> Void = { [weak self] result in
+    private lazy var dataListener: (Result<CharacterDataResponse, ErrorResponse>) -> Void = { [weak self] result in
         
         self?.dataFormatter.paginationData.fetching = false
         
@@ -113,6 +119,11 @@ extension MainViewModel: ItemProviderProtocol {
         guard dataFormatter.paginationData.checkLoadingMore() else { return }
         dataFormatter.paginationData.nextOffset()
         getData()
+    }
+    
+    func selectedItem(at index: Int) {
+        print("clicked index: \(index)")
+        detailViewState?(ItemDetailViewRequest(id: dataFormatter.getItemId(at: index), type: .push))
     }
     
 }

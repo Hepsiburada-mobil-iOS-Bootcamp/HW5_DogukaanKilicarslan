@@ -10,9 +10,10 @@ import UIKit
 class LoginViewBuilder {
     
     class func build() -> UIViewController {
-        
         let authenticationManager = AuthenticationManager.shared
-        return LoginViewController(viewModel: LoginViewModel(authenticationManager: authenticationManager))
+        let formatter = LoginViewFormatter()
+        let viewModel = LoginViewModel(authenticationManager: authenticationManager, formatter: formatter)
+        return LoginViewController(viewModel: viewModel)
     }
     
 }

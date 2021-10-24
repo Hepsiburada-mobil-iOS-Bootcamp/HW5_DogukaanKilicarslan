@@ -7,12 +7,23 @@
 
 import Foundation
 
+typealias SugarTextChangeBlock = (String?) -> Void
+
 class TextFieldViewData {
     
     private(set) var placeholder: String
+    private(set) var isSecureTextEntry: Bool
+    private(set) var sugarTextChangeListener: SugarTextChangeBlock?
     
-    init(placeholder: String) {
+    init(placeholder: String,
+         isSecureTextEntry: Bool) {
         self.placeholder = placeholder
+        self.isSecureTextEntry = isSecureTextEntry
+    }
+    
+    func setSugarTextChangeListener(by value: @escaping SugarTextChangeBlock) -> Self {
+        sugarTextChangeListener = value
+        return self
     }
     
 }

@@ -18,8 +18,9 @@ protocol MainViewDataFormatterProtocol {
     
     func getCount() -> Int
     
-    func setData(with response: CharacterListResponse)
+    func setData(with response: CharacterDataResponse)
     
     func getItem(at index: Int) -> GenericDataProtocol?
     
+    func getItemId(at index: Int) -> Int
 }

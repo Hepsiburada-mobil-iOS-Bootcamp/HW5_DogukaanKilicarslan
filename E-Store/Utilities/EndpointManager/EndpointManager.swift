@@ -23,11 +23,14 @@ enum EndpointManager {
     enum Paths: CustomStringConvertible {
         
         case characters
+        case detail(Int)
         
         var description: String {
             switch self {
                 case .characters:
                     return "characters"
+                case .detail(let characterId):
+                    return "characters/\(characterId)"
             }
         }
         

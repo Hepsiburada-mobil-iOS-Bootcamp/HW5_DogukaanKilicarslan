@@ -33,8 +33,8 @@
         "repositoryURL": "https://github.com/emircanaydin/DefaultNetworkOperationPackage.git",
         "state": {
           "branch": null,
-          "revision": "5c9042ac07fcd6522e77ca6788ffbac96a7e6913",
-          "version": "1.3.1"
+          "revision": "eddd42a5b118531cfb136bba4ac6aab7aebf06de",
+          "version": "1.4.0"
         }
       },
       {
@@ -98,6 +98,15 @@
           "branch": null,
           "revision": "0706abcc6b0bd9cedfbb015ba840e4a780b5159b",
           "version": "1.22.2"
+        }
+      },
+      {
+        "package": "Lottie",
+        "repositoryURL": "https://github.com/airbnb/lottie-ios.git",
+        "state": {
+          "branch": null,
+          "revision": "79a0b70547f7c40ea54c67487f935fa2f2eaaadc",
+          "version": "3.2.3"
         }
       },
       {

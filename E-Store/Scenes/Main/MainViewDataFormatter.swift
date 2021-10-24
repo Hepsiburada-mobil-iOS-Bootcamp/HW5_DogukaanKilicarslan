@@ -28,7 +28,7 @@ class MainViewDataFormatter: MainViewDataFormatterProtocol {
         return list.count
     }
     
-    func setData(with response: CharacterListResponse) {
+    func setData(with response: CharacterDataResponse) {
         self.componentData = response.data
         self.paginationData.resultCount = response.data.count
         self.list.append(contentsOf: response.data.results)
@@ -37,7 +37,9 @@ class MainViewDataFormatter: MainViewDataFormatterProtocol {
     func getItem(at index: Int) -> GenericDataProtocol? {
         return ContentDisplayerViewData(imageData: CustomImageViewComponentData(imageUrl: createImageData(by: list[index].thumbnail)), name: list[index].name)
     }
-    
+    func getItemId(at index: Int) -> Int {
+        return list[index].id
+    }
     private func createImageData(by value: Thumbnail) -> String {
         return "\(value.path)/portrait_incredible.\(value.thumbnailExtension)"
     }

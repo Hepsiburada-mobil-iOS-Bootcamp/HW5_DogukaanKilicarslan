@@ -32,14 +32,14 @@ class EmailLoginView: GenericBaseView<EmailLoginViewData> {
         return temp
     }()
     
-    private lazy var userName: TextFieldView = {
-        let temp = TextFieldView()
+    private lazy var userName: SugarTextFieldView = {
+        let temp = SugarTextFieldView()
         temp.translatesAutoresizingMaskIntoConstraints = false
         return temp
     }()
     
-    private lazy var password: TextFieldView = {
-        let temp = TextFieldView()
+    private lazy var password: SugarTextFieldView = {
+        let temp = SugarTextFieldView()
         temp.translatesAutoresizingMaskIntoConstraints = false
         return temp
     }()

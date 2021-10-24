@@ -105,6 +105,16 @@ extension ItemCollectionView: UICollectionViewDelegate, UICollectionViewDataSour
         }
     }
     
+    func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
+        let cell = collectionView.cellForItem(at: indexPath)
+        cell?.isUserInteractionEnabled = false
+        cell?.startTappedAnimation(with: { [weak self] finish in
+            if finish {
+                self?.delegate?.selectedItem(at: indexPath.row)
+                cell?.isUserInteractionEnabled = true
+            }
+        })
+    }
 }
 
 // MARK: - UICollectionViewDelegateFlowLayout

@@ -1,5 +1,5 @@
 //
-//  CharacterListServiceProvider.swift
+//  CharacterDetailServiceProvider.swift
 //  E-Store
 //
 //  Created by DarkBringer on 24.10.2021.
@@ -8,12 +8,12 @@
 import Foundation
 import DefaultNetworkOperationPackage
 
-class CharacterListServiceProvider: ApiServiceProvider<CharacterDataRequest> {
+class CharacterDetailServiceProvider: ApiServiceProvider<CharacterDetailRequest> {
     
-    init(request: CharacterDataRequest) {
+    init(request: CharacterDetailRequest) {
         super.init(method: .get,
                    baseUrl: BaseURL.main.description,
-                   path: Paths.characters.description,
+                   path: Paths.detail(request.characterId ?? 0).description,
                    data: request)
     }
     

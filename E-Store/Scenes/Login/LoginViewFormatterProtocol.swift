@@ -9,6 +9,9 @@ import Foundation
 
 protocol LoginViewFormatterProtocol {
     
-    func getLoginViewData(loginActionButtonCompletion: @escaping VoidBlock) -> LoginAuthenticationViewData 
+    func getLoginViewData(
+        loginActionButtonCompletion: @escaping VoidCompletionBlock,
+        emailChangeCompletion: @escaping SugarTextChangeBlock,
+        passwordChangeCompletion: @escaping SugarTextChangeBlock) -> LoginAuthenticationViewData
     
 }

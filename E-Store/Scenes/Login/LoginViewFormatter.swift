@@ -9,20 +9,18 @@ import Foundation
 
 class LoginViewFormatter: LoginViewFormatterProtocol {
     
-    func getLoginViewData(loginActionButtonCompletion: @escaping VoidBlock) -> LoginAuthenticationViewData {
+    func getLoginViewData(
+        loginActionButtonCompletion: @escaping VoidCompletionBlock,
+        emailChangeCompletion: @escaping SugarTextChangeBlock,
+        passwordChangeCompletion: @escaping SugarTextChangeBlock) -> LoginAuthenticationViewData {
+        let actionButton = ActionButtonData(text: "Login", buttonType: .filled(.sugarLevelColor))
+            .setActionButtonListener(by: loginActionButtonCompletion)
         
-        return LoginAuthenticationViewData(
-            actionButtonData: ActionButtonData(
-                text: "Login",
-                buttonType: .filled(.sugarLevelColor)),
-            signOutButton: ActionButtonData(
-                text: "Logout",
-                buttonType: .filled(.bright)),
-            emailLoginViewData: EmailLoginViewData(
-                email: TextFieldViewData(placeholder: "Email"),
-                password: TextFieldViewData(placeholder: "Password")))
+        let emailLoginViewData = EmailLoginViewData(
+            email: TextFieldViewData(placeholder: "Email", isSecureTextEntry: false).setSugarTextChangeListener(by: emailChangeCompletion),
+            password: TextFieldViewData(placeholder: "Password", isSecureTextEntry: true).setSugarTextChangeListener(by: passwordChangeCompletion))
         
+        return LoginAuthenticationViewData(actionButtonData: actionButton, emailLoginViewData: emailLoginViewData)
     }
-    
     
 }

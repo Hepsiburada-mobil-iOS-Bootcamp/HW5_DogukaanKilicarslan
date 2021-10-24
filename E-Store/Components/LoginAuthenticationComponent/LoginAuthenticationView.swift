@@ -77,11 +77,8 @@ class LoginAuthenticationView: GenericBaseView<LoginAuthenticationViewData> {
             containerView.bottomAnchor.constraint(equalTo: bottomAnchor),
             
             mainStackView.topAnchor.constraint(equalTo: containerView.topAnchor, constant: 30),
-            
             mainStackView.bottomAnchor.constraint(equalTo: containerView.bottomAnchor, constant: -30),
-            
             mainStackView.leadingAnchor.constraint(equalTo: containerView.leadingAnchor, constant: 30),
-            
             mainStackView.trailingAnchor.constraint(equalTo: containerView.trailingAnchor, constant: -30),
             
         ])
@@ -91,7 +88,6 @@ class LoginAuthenticationView: GenericBaseView<LoginAuthenticationViewData> {
         super.loadDataView()
         guard let data = returnData() else { return }
         loginButton.setData(by: data.actionButtonData)
-        signOutButton.setData(by: data.signOutButton)
         emailLoginView.setData(by: data.emailLoginViewData)
         mainStackView.setCustomSpacing(20, after: emailLoginView)
         mainStackView.setCustomSpacing(30, after: infoTitle)

@@ -8,8 +8,8 @@
 import UIKit
 import BaseComponents
 
-class TextFieldView: GenericBaseView<TextFieldViewData> {
-    
+class SugarTextFieldView: GenericBaseView<TextFieldViewData> {
+
     private lazy var containerView: UIView = {
         let temp = UIView()
         temp.translatesAutoresizingMaskIntoConstraints = false
@@ -21,6 +21,8 @@ class TextFieldView: GenericBaseView<TextFieldViewData> {
         let temp = UITextField()
         temp.translatesAutoresizingMaskIntoConstraints = false
         temp.clearButtonMode = .whileEditing
+        //temp.delegate = self
+        temp.addTarget(self, action: .catchTextFieldChanges, for: .editingChanged)
         return temp
     }()
     
@@ -54,6 +56,25 @@ class TextFieldView: GenericBaseView<TextFieldViewData> {
         super.loadDataView()
         guard let data = returnData() else { return }
         textField.placeholder = data.placeholder
+        textField.isSecureTextEntry = data.isSecureTextEntry
     }
+    
+    @objc func catchTextFieldChanges(_ sender: UITextField) {
+        returnData()?.sugarTextChangeListener?(sender.text)
+    }
+    
+}
+
+extension SugarTextFieldView: UITextFieldDelegate {
+    
+    func textFieldDidEndEditing(_ textField: UITextField) {
+        returnData()?.sugarTextChangeListener?(textField.text)
+    }
+    
+}
+
+fileprivate extension Selector {
+    
+    static let catchTextFieldChanges = #selector(SugarTextFieldView.catchTextFieldChanges)
     
 }
