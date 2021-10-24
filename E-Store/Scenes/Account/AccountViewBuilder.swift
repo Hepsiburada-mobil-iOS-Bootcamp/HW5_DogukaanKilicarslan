@@ -14,7 +14,8 @@ class AccountViewBuilder {
     class func build() -> UIViewController {
         
         let formatter = AccountViewDataFormatter()
-        let viewModel = AccountViewModel(formatter: formatter)
+        let authenticationManeger = AuthenticationManager.shared
+        let viewModel = AccountViewModel(formatter: formatter, authenticationManager: authenticationManeger)
         let viewController = AccountViewController(viewModel: viewModel)
         
         viewController.title = "Account"

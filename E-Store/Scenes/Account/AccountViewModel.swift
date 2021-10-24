@@ -11,23 +11,17 @@ import BaseComponents
 class AccountViewModel {
     
     private let formatter: AccountViewDataProtocol
+    private let authenticationManager: AuthenticationManagerProtocol
     
     private var state: AccountViewState?
     private var loginActionBlock: VoidCompletionBlock?
     private var data = [GenericDataProtocol]()
     
-    init(formatter: AccountViewDataProtocol) {
+    init(formatter: AccountViewDataProtocol,
+         authenticationManager: AuthenticationManagerProtocol) {
         self.formatter = formatter
-    }
-    
-    func getViewComponentData() {
-        state?(.loading)
-        DispatchQueue.main.asyncAfter(deadline: .now() + 1) { [weak self] in
-            guard let self = self else { return }
-            self.data = self.formatter.getAccountViewComponentData()
-            self.state?(.done)
-        }
-        
+        self.authenticationManager = authenticationManager
+        subscribeAuthenticationManager()
     }
     
     func subscribeViewState(with completion: @escaping AccountViewState) {
@@ -42,14 +36,36 @@ class AccountViewModel {
         return ItemListViewData(headerViewData: formatter.getHeaderViewData(with: loginActionButtonListener))
     }
     
+    private func subscribeAuthenticationManager() {
+        authenticationManager.isLoggedIn(with: isLoggedInListener)
+    }
+    
+    private func loggedInListenerHandler(with value: Bool) {
+        state?(.loading)
+        data = formatter.getAccountViewComponentData(by: value)
+        state?(.done)
+    }
+        
+    private func selectedItemHandler(at index: Int) {
+        switch data[index].type {
+            case .logout:
+                authenticationManager.logout()
+            default:
+                break
+        }
+    }
+
     private lazy var loginActionButtonListener: VoidCompletionBlock = { [weak self] in
         print("button tapped")
         self?.loginActionBlock?()
     }
-    
+    private lazy var isLoggedInListener: BooleanBlock = { [weak self] value in
+        print("test : \(value)")
+        self?.loggedInListenerHandler(with: value)
+    }
 }
 
-extension AccountViewModel: ItemListProtocol {
+extension AccountViewModel: ItemProviderProtocol {
     
     func askData(at index: Int) -> GenericDataProtocol? {
         return data[index]

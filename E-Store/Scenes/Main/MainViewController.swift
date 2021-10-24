@@ -7,58 +7,55 @@
 
 import UIKit
 import BaseComponents
-import Firebase
-
-extension Selector {
-    static let testButtonTapped = #selector(MainViewController.testButtonAction)
-}
 
 class MainViewController: BaseViewController<MainViewModel> {
     
-    
-    private lazy var test: UIButton = {
-        let temp = UIButton(type: .system)
-        temp.translatesAutoresizingMaskIntoConstraints = false
-        temp.addTarget(self, action: .testButtonTapped, for: .touchUpInside)
-        temp.setTitle("PUSH", for: .normal)
-        //temp.setTitleColor(.black, for: .normal)
-        return temp
-    }()
+    private var mainComponent: ItemCollectionView!
     
     override func prepareViewControllerConfigurations() {
         super.prepareViewControllerConfigurations()
-        
         view.backgroundColor = .green
-        
-        addTestButton()
         addViewModelListeners()
-        
+        addMainComponent()
     }
     
-    private func addTestButton() {
-        view.addSubview(test)
+    private func addMainComponent() {
+        mainComponent = ItemCollectionView()
+        mainComponent.translatesAutoresizingMaskIntoConstraints = false
+        mainComponent.delegate = viewModel
+        
+        view.addSubview(mainComponent)
         
         NSLayoutConstraint.activate([
-        
-            test.centerXAnchor.constraint(equalTo: view.centerXAnchor),
-            test.centerYAnchor.constraint(equalTo: view.centerYAnchor)
-        
+            
+            mainComponent.leadingAnchor.constraint(equalTo: view.leadingAnchor),
+            mainComponent.trailingAnchor.constraint(equalTo: view.trailingAnchor),
+            mainComponent.topAnchor.constraint(equalTo: view.topAnchor),
+            mainComponent.bottomAnchor.constraint(equalTo: view.bottomAnchor),
+            
         ])
+    
     }
     
     private func addViewModelListeners() {
         viewModel.subscribeLoginState { [weak self] state in
             self?.userLoginStateHandler(with: state)
         }
+        viewModel.subscribeViewState { [weak self] state in
+            switch state {
+                case .loading:
+                    return
+                case .done:
+                    self?.mainComponent.reloadCollectionView()
+                default:
+                    break
+            }
+        }
     }
     
     private func userLoginStateHandler(with value: Bool) {
         guard !value else { return }
         //present(LoginViewBuilder.build(), animated: true, completion: nil)
-    }
-    
-    @objc func testButtonAction(_ sender: UIButton) {
-    
     }
     
 }

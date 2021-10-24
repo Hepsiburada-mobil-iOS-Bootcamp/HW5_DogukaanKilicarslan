@@ -14,7 +14,7 @@ class ItemListView: GenericBaseView<ItemListViewData> {
         print("DEINIT ItemListView")
     }
     
-    weak var delegate: ItemListProtocol?
+    weak var delegate: ItemProviderProtocol?
     
     private lazy var tableView: UITableView = {
         let temp = UITableView()
@@ -93,6 +93,10 @@ extension ItemListView: UITableViewDelegate, UITableViewDataSource {
         cell.setData(by: data)
         
         return cell
+    }
+    
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        delegate?.selectedItem(at: indexPath.row)
     }
 }
 
